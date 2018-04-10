@@ -41,14 +41,14 @@ void FBullCowGame::Reset() {
 		"pacify", "machine", "magnets", "magnify", "arise", "bachelor", "bankrupt", "gamer", "games", "gears", "machinery", "manifesto", "laser", "gelatinous", "background", "image", "mage", "wizard", "magnitudes", "neighbor", "maser", "notepad", "moral", "realm", "monarch", "hailstone", "songbird", "tadpoles", "tendrils", "acolyte", "planet", "rages", "hacker", "helipad", "helicopter", "decryption" };
 	srand(time(NULL));
 	MyHiddenWord = HIDDEN_WORD[1 + rand() % 7];
-	SetHiddenWordSecondLetter();
+	SetHiddenWordThirdLetter();
 
 	return;
 }
 
-FString FBullCowGame::SetHiddenWordSecondLetter() {
-	MyHiddenWordSecondLetter = MyHiddenWord[2];
-	return MyHiddenWordSecondLetter;
+FString FBullCowGame::SetHiddenWordThirdLetter() {
+	MyHiddenWordThirdLetter = MyHiddenWord[2];
+	return MyHiddenWordThirdLetter;
 }
 
 

@@ -56,7 +56,7 @@ int main () {
 
 void PrintIntro() {
 	int32 WORD_LENGTH = BCGame.GetHiddenWordLength();
-	FText MyHiddenWordSecondLetter = BCGame.SetHiddenWordSecondLetter();
+	FText MyHiddenWordSecondLetter = BCGame.SetHiddenWordThirdLetter();
 	
 	std::cout << "Welcome to Bulls and Cows, a fun word game!\n";
 	std::cout << std::endl;

@@ -37,14 +37,14 @@ class FBullCowGame {
 		EGuessStatus CheckGuessValidity(FString) const;
 
 		void Reset();
-		FString SetHiddenWordSecondLetter();
+		FString SetHiddenWordThirdLetter();
 		FBullCowCount SubmitValidGuess(FString);
 
 	private:
 		//see constructor for initialisation
 		int32 MyCurrentTry;
 		FString MyHiddenWord;
-		FString MyHiddenWordSecondLetter;
+		FString MyHiddenWordThirdLetter;
 		bool bGameIsWon;
 
 		bool IsIsogram(FString) const;

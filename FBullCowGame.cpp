@@ -4,13 +4,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include <ctime>
+#include <vector>
 #include <map>
 //to make syntax Unreal friendly
 #define TMap std::map
 using int32 = int;
 
 //default constructor
-FBullCowGame::FBullCowGame() {
+FBullCowGame::FBullCowGame() { 
 	Reset();
 }
 
@@ -36,13 +37,11 @@ void FBullCowGame::Reset() {
 	MyCurrentTry = 1;
 	bGameIsWon = false;
 	//hidden word must be an isogram
-	const FString HIDDEN_WORD[] = { "ale", "gap", "pan", "back", "bank", "bath", "daft", "dogs", "duck", "naive", "nasty", "neigh", "badge", "bench", "blimp", "crags", "tails", "tamed", "macro", "magic", "tapir", "micro", "zeal", "abduct", "acorns", "active", "adjust", "careful", "badger", "bakery"
+	std::vector<FString> hidden_word { "ale", "gap", "pan", "back", "bank", "bath", "daft", "dogs", "duck", "naive", "nasty", "neigh", "badge", "bench", "blimp", "crags", "tails", "tamed", "macro", "magic", "tapir", "micro", "zeal", "abduct", "acorns", "active", "adjust", "careful", "badger", "bakery"
 		"bandit", "belfry", "blaze", "beacon", "decoy", "debt", "design", "fabric", "fables", "factor", "falcon", "flagon", "forged", "forget", "format", "code", "malice", "radio", "raid", "roads", "pigeon",
 		"pacify", "machine", "magnets", "magnify", "arise", "bachelor", "bankrupt", "gamer", "games", "gears", "machinery", "manifesto", "laser", "gelatinous", "background", "image", "mage", "wizard", "magnitudes", "neighbor", "maser", "notepad", "moral", "realm", "monarch", "hailstone", "songbird", "tadpoles", "tendrils", "acolyte", "planet", "rages", "hacker", "helipad", "helicopter", "decryption" };
-	srand(time(NULL));
-	MyHiddenWord = HIDDEN_WORD[1 + rand() % 7];
-	SetHiddenWordThirdLetter();
-
+	int hidden_word_end = static_cast<int>(hidden_word.size()) - 1;
+	MyHiddenWord = hidden_word[rand() % hidden_word_end];
 	return;
 }
 

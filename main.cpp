@@ -6,6 +6,9 @@ For Game Logic, see FBullCowGame class.
 #pragma once
 #include <iostream>
 #include <string>
+#include <stdlib.h>
+#include <time.h>
+#include <ctime>
 #include "FBullCowGame.h"
 
 //to make syntax Unreal friendly
@@ -25,6 +28,7 @@ FBullCowGame BCGame; //instantiate a new game, which we re-use across plays
 
 //entry point for application
 int main () {
+	std::srand(static_cast<int32>(std::time(0))); // To seed your random generator with the std::time function
 	bool bPlayAgain = false;
 	bool WantsExplanation = false;
 	do {

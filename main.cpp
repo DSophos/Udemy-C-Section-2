@@ -32,6 +32,7 @@ int main () {
 	bool bPlayAgain = false;
 	bool WantsExplanation = false;
 	do {
+		BCGame.Reset();
 		//print Introduction
 		PrintIntro();
 		//ask if player needs explanation
@@ -93,8 +94,6 @@ void PrintExplanationIfPlayerWantsIt() {
 
 //Plays a single game to completion
 void PlayGame() {
-	//reset game
-	BCGame.Reset();
 	//create a MaxTries variable
 	int32 MaxTriesForPlayGame = BCGame.GetMaxTries();
 
